@@ -6,6 +6,14 @@ import {Provider} from 'react-redux'
 import RememberApp from './src/rememberApp'
 
 export default function App() {
+  
+  
+  store.subscribe(()=>{
+    console.log(store.getState()) 
+
+  })
+
+
   return (
     <Provider store={store}>
       <View>

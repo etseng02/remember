@@ -1,8 +1,8 @@
-export default deckListReducer = (state ={} , action) => {
+export default deckListReducer = (state ={deckList:[]} , action) => {
   switch(action.type){
     case 'ADD_DECK':
       return {
-        ...state, deckList: {...deckList}
+        ...state, deckList: [ ...state.deckList, {deckName: action.text, cards: []}]
       }
       default: return state;
   }
