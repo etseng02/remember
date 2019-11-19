@@ -9,8 +9,7 @@ export default function App() {
   
   
   store.subscribe(()=>{
-    console.log(store.getState()) 
-
+    console.log(store.getState())
   })
 
 

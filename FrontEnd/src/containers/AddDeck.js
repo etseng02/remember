@@ -4,9 +4,13 @@ import {connect} from 'react-redux'
 
 class AddDeck extends Component{
 
-  state ={
-    text: ''
-  }
+  constructor(props){
+    super(props);
+ 
+    this.state = {
+       text: '',
+    }
+ }
 
   addDeck = (text) => {
     this.props.dispatch({type:'ADD_DECK', text})
