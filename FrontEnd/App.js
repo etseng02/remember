@@ -3,7 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import {Button} from './src/components/Button'
 import store from './src/store/index'
 import {Provider} from 'react-redux'
-import RememberApp from './src/rememberApp'
+import DeckListScreen from './src/screens/DeckListScreen'
+import Navigator from './src/config/routes'
 
 export default function App() {
   
@@ -16,7 +17,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <View>
-        <RememberApp/>
+        <Navigator/>
       </View>
     </Provider>
   );
