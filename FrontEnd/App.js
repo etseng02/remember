@@ -4,7 +4,7 @@ import {Button} from './src/components/Button'
 import store from './src/store/index'
 import {Provider} from 'react-redux'
 import DeckListScreen from './src/screens/DeckListScreen'
-import Navigator from './src/config/routes'
+import MainNavigator from './src/config/routes'
 
 export default function App() {
   
@@ -13,21 +13,9 @@ export default function App() {
     console.log(store.getState())
   })
 
-
   return (
     <Provider store={store}>
-      <View>
-        <Navigator/>
-      </View>
+        <MainNavigator/>
     </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

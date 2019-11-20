@@ -1,15 +1,18 @@
-import {StackNavigator, createAppContainer} from 'react-navigation'
+import {createAppContainer} from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack';
-
-
 import DeckListScreen from '../screens/DeckListScreen'
 
-const RootStack = createStackNavigator({
-  Home: {
-    screen: DeckListScreen
+const screens = 
+  {
+    DeckListScreen: {screen: DeckListScreen},
   }
-});
+;
 
-const Navigator = createAppContainer(RootStack);
+const config = {
+  headerMode: 'none',
+  initialRouteName: 'DeckListScreen'
+}
 
-export default Navigator;
+const MainNavigator = createStackNavigator(screens,config);
+
+export default createAppContainer(MainNavigator);

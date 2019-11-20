@@ -23,7 +23,6 @@ export default DeckListItems
 const styles = StyleSheet.create({
   deckListTitle: {
     fontSize: 24,
-    alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
     marginTop: 10
@@ -34,7 +33,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
-    alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
     alignSelf: 'center',
