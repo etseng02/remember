@@ -1,7 +1,7 @@
 import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 
-const DeckListItems = ({decks=[]}) => {
+const DeckListItems = ({decks=[], selectDeck}) => {
 
   return(
     <View>
@@ -9,7 +9,7 @@ const DeckListItems = ({decks=[]}) => {
       {
         decks.map(deck => {
           return (<View>
-            <TouchableOpacity>
+            <TouchableOpacity id={deck.key} onPress={() => selectDeck(deck.key)}>
               <Text style={styles.deckItem}>{deck.deckName}</Text>
             </TouchableOpacity>
           </View>)

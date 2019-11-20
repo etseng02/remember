@@ -8,10 +8,10 @@ const mapStateToProps = function(state) {
 }
 
 
-// mapDispatchToProps = dispatch => ({
-//   toggleDeck: id => dispatch({type: 'TOGGLE_DECK', id})
-// })
+mapDispatchToProps = dispatch => ({
+  selectDeck: id => dispatch({type: 'SELECT_DECK', id})
+})
 
 
 
-export default connect(mapStateToProps)(DeckListItems)
+export default connect(mapStateToProps, mapDispatchToProps)(DeckListItems)
