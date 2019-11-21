@@ -1,21 +1,21 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import Logo from '../components/Logo'
-import Deck from '../containers/Deck'
+import AddCards from '../containers/AddCards'
 
-class DeckView extends Component{
+class AddCardScreen extends Component{
 
   render(){
     return(
       <View style={Styles.container}>
         <Logo/>
-        <Deck navigation={this.props.navigation}/>
+        <AddCards navigation={this.props.navigation}/>
       </View>
     )
   }
 }
 
-export default DeckView;
+export default AddCardScreen;
 
 const Styles = StyleSheet.create({
   appTitle:{

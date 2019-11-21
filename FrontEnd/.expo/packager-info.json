@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 3176,
   "expoServerNgrokUrl": "https://db-8py.anonymous.frontend.exp.direct",
   "packagerNgrokUrl": "https://packager.db-8py.anonymous.frontend.exp.direct",
-  "ngrokPid": 11483,
+  "ngrokPid": 3197,
   "webpackServerPort": null
 }
