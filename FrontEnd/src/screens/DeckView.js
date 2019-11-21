@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import Logo from '../components/Logo'
+import Deck from '../containers/Deck'
 
 class DeckView extends Component{
 
@@ -8,6 +9,7 @@ class DeckView extends Component{
     return(
       <View style={Styles.container}>
         <Logo/>
+        <Deck/>
       </View>
     )
   }

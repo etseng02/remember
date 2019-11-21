@@ -1,7 +1,6 @@
 import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
-import { withNavigation } from 'react-navigation';
 
 //const DeckListItems = ({decks=[], selectDeck}) => {
 const DeckListItems = (props) => {
