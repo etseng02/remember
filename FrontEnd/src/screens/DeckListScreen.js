@@ -11,7 +11,7 @@ class DeckListScreen extends Component{
       <View style={Styles.container}>
         <Logo/>
         <AddDeck/>
-        <DeckList/>
+        <DeckList navigation={this.props.navigation}/>
       </View>
     )
   }

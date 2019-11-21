@@ -1,15 +1,21 @@
 import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
+import { withNavigation } from 'react-navigation';
 
-const DeckListItems = ({decks=[], selectDeck}) => {
+//const DeckListItems = ({decks=[], selectDeck}) => {
+const DeckListItems = (props) => {
+
+  // console.log(props.navigation)
 
   return(
     <View>
       <Text style={styles.deckListTitle}>Deck List</Text>
       {
-        decks.map(deck => {
+        props.decks.map(deck => {
           return (<View>
-            <TouchableOpacity id={deck.key} onPress={() => selectDeck(deck.key)}>
+            {/* <TouchableOpacity id={deck.key} onPress={() => {selectDeck(deck.key)}}> */}
+            <TouchableOpacity id={deck.key} onPress={() => {props.selectDeck(deck.key),props.navigation.navigate('DeckView')}}>
               <Text style={styles.deckItem}>{deck.deckName}</Text>
             </TouchableOpacity>
           </View>)
