@@ -1,0 +1,3 @@
+## Remember (WORK IN PROGRESS)
+
+A flashcard application used to help commit knowledge into long term memory. Users are required to create decks. Users can add and remove cards from the deck. Users can enter a study mode to test their knowledge of cards in the deck. The application will determine the next timestamp that the user needs to study each flash card depending on the results. Cards that the user answers incorrectly will have a more frequent interval and the cards that the users answers correctly will have a longer interval. Knowledge that the user frequently gets incorrectly will be reminded at a shorter interval to commit that knowledge to long term memory.
