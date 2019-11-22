@@ -4,9 +4,7 @@ import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
 
 //const DeckListItems = ({decks=[], selectDeck}) => {
 const DeckListItems = (props) => {
-
-  // console.log(props.navigation)
-
+  
   return(
     <View>
       <Text style={styles.deckListTitle}>Deck List</Text>
@@ -14,8 +12,8 @@ const DeckListItems = (props) => {
         props.decks.map(deck => {
           return (<View>
             {/* <TouchableOpacity id={deck.key} onPress={() => {selectDeck(deck.key)}}> */}
-            <TouchableOpacity id={deck.key} onPress={() => {props.selectDeck(deck.key),props.navigation.navigate('DeckView')}}>
-              <Text style={styles.deckItem}>{deck.deckName}</Text>
+            <TouchableOpacity onPress={() => {props.selectDeck(deck), props.navigation.navigate('DeckView')}}>
+              <Text style={styles.deckItem}>{deck}</Text>
             </TouchableOpacity>
           </View>)
         })}

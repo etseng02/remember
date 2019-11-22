@@ -2,26 +2,46 @@ import React, {Component} from 'react'
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import {connect} from 'react-redux'
 
+const mapStateToProps = function(state) {
+  return {
+    deck: state.deckSelectReducer.deck
+  }
+}
+
 class AddCards extends Component{
 
   constructor(props){
     super(props);
  
     this.state = {
-       text: '',
+       card: '',
+       answer:''
     }
  }
 
+ addCard = (card, answer, deck) => {
+  this.props.dispatch({type:'ADD_CARD', card, answer, deck})
+  this.setState({card:''})
+  this.setState({answer:''})
+}
+
   render(){
     return(
-      <View style={{flexDirection: 'row', marginHorizontal: 50 }}>
+      <View style={{flexDirection: 'column', marginHorizontal: 50 }}>
         <TextInput
-          onChangeText={(text)=> this.setState({text})}
+          onChangeText={(text)=> this.setState({card:text})}
           placeholder="Add a New Card Here!"
           style={styles.input}
-          value={this.state.text}
+          value={this.state.card}
         />
-        <TouchableOpacity onPress={()=> console.log("Add Card!")}>
+
+        <TextInput
+          onChangeText={(text)=> this.setState({answer:text})}
+          placeholder="Add a New Card Answer Here!"
+          style={styles.input}
+          value={this.state.answer}
+        />
+        <TouchableOpacity onPress={()=> {this.addCard(this.state.card, this.state.answer, this.props.deck)}}>
           <View style={styles.addButton}>
             <Text>+</Text>
           </View>
@@ -31,7 +51,7 @@ class AddCards extends Component{
   }
 }
 
-export default connect()(AddCards);
+export default connect(mapStateToProps)(AddCards);
 
 const styles = StyleSheet.create({
   input:{

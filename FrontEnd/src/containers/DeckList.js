@@ -3,13 +3,13 @@ import DeckListItems from '../components/DeckListItems'
 
 const mapStateToProps = function(state) {
   return {
-    decks: state.deckListReducer.deckList,
+    decks: Object.keys(state.deckListReducer.deckList)
   }
 }
 
 
 mapDispatchToProps = dispatch => ({
-  selectDeck: id => dispatch({type: 'SELECT_DECK', id})
+  selectDeck: name => dispatch({type: 'SELECT_DECK', name})
 })
 
 
