@@ -2,7 +2,6 @@ import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import {Button} from './Button'
 
-//const DeckListItems = ({decks=[], selectDeck}) => {
 const deckDetails = (props) => {
 
   return(

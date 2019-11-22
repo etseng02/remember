@@ -10,7 +10,6 @@ const mapStateToProps = function(state) {
 
 
 mapDispatchToProps = dispatch => ({
-  // selectDeck: id => dispatch({type: 'ADD_CARD', card, answer, id})
 })
 
 

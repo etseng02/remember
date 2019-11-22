@@ -2,7 +2,6 @@ import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
 
-//const DeckListItems = ({decks=[], selectDeck}) => {
 const DeckListItems = (props) => {
   
   return(
@@ -11,7 +10,6 @@ const DeckListItems = (props) => {
       {
         props.decks.map(deck => {
           return (<View>
-            {/* <TouchableOpacity id={deck.key} onPress={() => {selectDeck(deck.key)}}> */}
             <TouchableOpacity onPress={() => {props.selectDeck(deck), props.navigation.navigate('DeckView')}}>
               <Text style={styles.deckItem}>{deck}</Text>
             </TouchableOpacity>
