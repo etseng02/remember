@@ -3,8 +3,8 @@ import deckDetails from '../components/deckDetails'
 
 const mapStateToProps = function(state) {
   return {
-    deckName: state.deckSelectReducer.deck,
-    deck: state.deckListReducer.deckList[state.deckSelectReducer.deck]
+    deckName: state.decks.current,
+    deck: state.decks.models[state.decks.current]
   }
 }
 
