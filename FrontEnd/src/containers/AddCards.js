@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = function(state) {
   return {
-    deck: state.deckSelectReducer.deck
+    deck: state.decks.current,
+    cards: state.cards,
   }
 }
 
@@ -26,6 +27,8 @@ class AddCards extends Component{
 }
 
   render(){
+
+    console.log("DAT THE CARDS",this.props.cards)
     return(
       <View style={{flexDirection: 'column', marginHorizontal: 50 }}>
         <TextInput

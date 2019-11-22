@@ -3,7 +3,7 @@ import DeckListItems from '../components/DeckListItems'
 
 const mapStateToProps = function(state) {
   return {
-    decks: Object.keys(state.deckListReducer.deckList)
+    decks: Object.keys(state.decks.models)
   }
 }
 
