@@ -9,10 +9,10 @@ A flashcard application used to help commit knowledge into long term memory. Use
 * Deck Details View 
 * Add Deck Feature
 * Add Card Feature
+* Redux Persist
 
 ### Features in Progress:
 * Study mode (Testing user on cards and calculating next study interval)
-* Async Storage
 * Syncing to server with authentication
 * Delete card
 * Delete deck

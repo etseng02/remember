@@ -28,7 +28,6 @@ class AddCards extends Component{
 
   render(){
 
-    console.log("DAT THE CARDS",this.props.cards)
     return(
       <View style={{flexDirection: 'column', marginHorizontal: 50 }}>
         <TextInput
