@@ -14,3 +14,5 @@ web-report/
 .DS_Store
 
 package-lock.json
+packager-info.json
+.expo/packager-info.json
