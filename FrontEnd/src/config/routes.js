@@ -3,12 +3,14 @@ import { createStackNavigator } from 'react-navigation-stack';
 import DeckListScreen from '../screens/DeckListScreen'
 import DeckView from '../screens/DeckView'
 import AddCardScreen from '../screens/AddCardScreen'
+import FreeStudyView from '../screens/FreeStudyScreen'
 
 const screens = 
   {
     DeckListScreen: {screen: DeckListScreen},
     DeckView: {screen: DeckView},
-    AddCard: {screen: AddCardScreen}
+    AddCard: {screen: AddCardScreen},
+    FreeStudy: {screen: FreeStudyView}
   }
 ;
 

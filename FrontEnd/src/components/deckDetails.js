@@ -9,7 +9,8 @@ const deckDetails = (props) => {
       <Text style={Styles.deckTitle}>{props.deckName}</Text>
       <Text>Number of Cards: {props.deck.cards.length}</Text>
       <Button text="Add Card" onPress={() => {props.navigation.navigate('AddCard')}}/>
-      <Button text="Study"/>
+      <Button text="Enhanced Study"/>
+      <Button text="Free Study"onPress={() => {props.navigation.navigate('FreeStudy')}}/>
     </View>
   )
 }
