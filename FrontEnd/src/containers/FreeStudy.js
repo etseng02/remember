@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import {connect} from 'react-redux'
+import CardView from '../components/CardView'
 
 const mapStateToProps = function(state) {
   return {
     deck: state.decks.current,
-    cards: state.cards,
+    cards: state.decks.models[state.decks.current].cards
   }
 }
 
@@ -15,12 +16,19 @@ class FreeStudy extends Component{
     super(props);
  
     this.state = {
-       text: '',
+       cardsQueue: '',
+       currentCard: ''
     }
  }
 
+ generateQueue = () => {
+  this.setState({...this.state, cardsQueue: 'hi'})
+ }
+
+
  componentDidMount = () => {
-   console.log("Hi")
+  this.generateQueue()
+  console.log(this.state)
  }
 
 
@@ -28,6 +36,7 @@ class FreeStudy extends Component{
     return(
       <View >
         <Text style={Styles.deckTitle}>{this.props.deck}</Text>
+        <CardView/>
       </View>
     )
   }
