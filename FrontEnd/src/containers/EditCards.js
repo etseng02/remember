@@ -3,14 +3,14 @@ import CardListItems from '../components/CardListItems'
 
 const mapStateToProps = function(state) {
   return {
-    deckName: state.decks.current,
-    cards: state.decks.models[state.decks.current].cards
+    deck: state.decks.current,
+    cards: state.decks.models[state.decks.current].cards,
   }
 }
 
 
 mapDispatchToProps = dispatch => ({
-  selectDeck: name => dispatch({type: 'SELECT_DECK', name})
+  deleteCard: name => dispatch({type: 'DELETE_CARD', name, deck})
 })
 
 

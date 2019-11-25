@@ -9,7 +9,7 @@ class EditCardsScreen extends Component{
     return(
       <View style={Styles.container}>
         <Logo/>
-        <EditCards/>
+        <EditCards navigation={this.props.navigation}/>
       </View>
     )
   }

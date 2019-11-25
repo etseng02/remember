@@ -8,12 +8,12 @@ const CardListItems = (props) => {
   
   return(
     <View>
-      <Text style={styles.deckListTitle}>The Current Deck</Text>
+      <Text style={styles.deckListTitle}>{props.deck}</Text>
       {
         props.cards.map(card => {
           return (<View key ={key++}>
             <TouchableOpacity onPress={() => {props.navigation.navigate('DeckView')}}>
-              <Text style={styles.deckItem}>{card[0]}</Text>
+              <Text style={styles.deckItem}>{card[0]} // {card[1]}</Text>
             </TouchableOpacity>
           </View>)
         })}
