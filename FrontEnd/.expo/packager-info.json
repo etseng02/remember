@@ -2,8 +2,8 @@
   "expoServerPort": 19000,
   "expoServerNgrokUrl": "https://db-8py.anonymous.frontend.exp.direct",
   "packagerNgrokUrl": "https://packager.db-8py.anonymous.frontend.exp.direct",
-  "ngrokPid": 2220,
+  "ngrokPid": 1938,
   "devToolsPort": 19002,
   "packagerPort": 19001,
-  "packagerPid": 2201
+  "packagerPid": 1908
 }

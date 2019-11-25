@@ -14,6 +14,8 @@ const models = (state = initialState.models , action) => {
           cards: [],
         }
       }
+    case 'DELETE DECK':
+      return delete state[action.deck]
     case 'ADD_CARD':
       return {
         ...state,

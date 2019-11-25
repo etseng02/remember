@@ -10,7 +10,7 @@ import { PersistGate } from "redux-persist/es/integration/react";
 export default function App() {
  
   store.subscribe(()=>{
-    //console.log(store.getState())
+    console.log(store.getState())
   })
 
   return (
