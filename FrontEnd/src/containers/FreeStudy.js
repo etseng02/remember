@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import {connect} from 'react-redux'
 import CardView from '../components/CardView'
+import {Button} from '../components/Button'
 
 const mapStateToProps = function(state) {
   return {
@@ -17,7 +18,8 @@ class FreeStudy extends Component{
  
     this.state = {
        cardsQueue: [],
-       currentCard: ''
+       currentCard: [],
+       phase: 'question'
     }
  }
 
@@ -43,17 +45,36 @@ class FreeStudy extends Component{
     NewArrayQueueChecker(tempNumber)
   }
 
-  newArrayQueue.forEach((number) =>{
+  newArrayQueue.forEach((number) => {
     newArray.push(this.props.cards[number])
   })
   return newArray
  }
 
+ 
+
 
  componentDidMount = () => {
   let newOrder = this.generateQueue()
-  this.setState({...this.state, cardsQueue: newOrder})
-  console.log(this.state)
+  let firstCard = newOrder[0]
+  newOrder.shift()
+  this.setState({...this.state, cardsQueue: newOrder, currentCard: firstCard})
+ }
+
+ nextQuestion = () => {
+
+  if (this.state.cardsQueue.length === 0) {
+    let newOrder = this.generateQueue()
+    let firstCard = newOrder[0]
+    newOrder.shift()
+    this.setState({...this.state, cardsQueue: newOrder, currentCard: firstCard})
+  } else {
+    let newCard = this.state.cardsQueue[0]
+    let newArray = this.state.cardsQueue
+    newArray.shift()
+    this.setState({...this.state, phase:'question', currentCard: newCard, cardsQueue: newArray })
+  }
+
  }
 
 
@@ -61,8 +82,10 @@ class FreeStudy extends Component{
     return(
       <View >
         <Text style={Styles.deckTitle}>{this.props.deck}</Text>
-        <CardView/>
-        <Text>{this.state.cardsQueue}</Text>
+        <CardView card={this.state.currentCard[0]}/>
+        {this.state.phase === 'question'? <Button text={'Submit Answer'} onPress={()=> this.setState({...this.state, phase:'answer'}) }/>: null }
+        {this.state.phase === 'answer'? <Text>{this.state.currentCard[1]}</Text>: null }
+        {this.state.phase === 'answer'? <Button text={'Next Question'} onPress={()=> this.nextQuestion() }/>: null }
       </View>
     )
   }

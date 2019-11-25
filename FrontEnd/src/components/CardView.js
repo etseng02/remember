@@ -3,7 +3,7 @@ import {Text} from 'react-native'
 
 const CardView = (props) => {
   return (
-    <Text>props.card</Text>
+    <Text>{props.card}</Text>
   )
 }
 
