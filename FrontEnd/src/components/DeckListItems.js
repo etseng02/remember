@@ -11,7 +11,8 @@ const DeckListItems = (props) => {
 
   const RightActions = () => {
     return(
-      <TouchableOpacity style={Styles.deleteDeck}>
+      <TouchableOpacity style={Styles.deleteDeck}
+      onPress={() => props.navigation.navigate('DeleteConfirm')}>
         <View >
             <Text>Delete Item</Text>
         </View>

@@ -1,29 +1,30 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import Logo from '../components/Logo'
-import FreeStudy from '../containers/FreeStudy'
+import DeleteConfirm from '../containers/DeleteConfirm'
 
-class FreeStudyView extends Component{
+class DeleteConfirmScreen extends Component{
 
   render(){
+
+
     return(
-      <View style={Styles.container}>
-        <FreeStudy/>
+      <View>
+        <DeleteConfirm navigation={this.props.navigation}/>
       </View>
     )
   }
 }
 
-export default FreeStudyView;
+export default DeleteConfirmScreen;
 
 const Styles = StyleSheet.create({
-  appTitle:{
+  container:{
+    padding: 10,
+    borderWidth: 1,
     fontSize: 28,
     alignSelf: 'center',
     justifyContent: 'center',
-    textAlign: 'center',
     marginTop: 25,
   },
-  container:{
-  }
 })

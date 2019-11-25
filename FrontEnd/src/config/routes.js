@@ -5,6 +5,7 @@ import DeckView from '../screens/DeckView'
 import AddCardScreen from '../screens/AddCardScreen'
 import FreeStudyView from '../screens/FreeStudyScreen'
 import EditCardsScreen from '../screens/EditCardsScreen'
+import DeleteConfirmScreen from '../screens/DeleteConfirmScreen'
 
 const screens = 
   {
@@ -21,6 +22,20 @@ const config = {
   initialRouteName: 'DeckListScreen'
 }
 
+
+
 const MainNavigator = createStackNavigator(screens,config);
 
-export default createAppContainer(MainNavigator);
+export const AppNavigator = createStackNavigator(
+  {
+    content: MainNavigator,
+    DeleteConfirm: { screen: DeleteConfirmScreen },
+  },
+  {
+    headerMode: 'none',
+    mode: 'modal',
+    initialRouteName: 'content'
+  }
+);
+
+export default createAppContainer(AppNavigator);
