@@ -9,10 +9,11 @@ const DeckListItems = (props) => {
 
   let key = 0
 
-  const RightActions = () => {
+  const RightActions = (deck) => {
     return(
-      <TouchableOpacity style={Styles.deleteDeck}
-      onPress={() => props.navigation.navigate('DeleteConfirm')}>
+      <TouchableOpacity
+      style={Styles.deleteDeck}
+      onPress={() => {props.selectDeck(deck.name), props.navigation.navigate('DeleteConfirm')}}>
         <View >
             <Text>Delete Item</Text>
         </View>
@@ -29,7 +30,7 @@ const DeckListItems = (props) => {
           return (
             <Swipeable
               key ={key++}
-              renderRightActions={RightActions}
+              renderRightActions={() => <RightActions name={deck}/>}
             >
               <View style={Styles.ListItem}>
                 <TouchableOpacity onPress={() => {props.selectDeck(deck), props.navigation.navigate('DeckView')}}>
