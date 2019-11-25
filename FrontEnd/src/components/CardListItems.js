@@ -2,18 +2,18 @@ import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
 
-const DeckListItems = (props) => {
+const CardListItems = (props) => {
 
   let key = 0
   
   return(
     <View>
-      <Text style={styles.deckListTitle}>Deck List</Text>
+      <Text style={styles.deckListTitle}>The Current Deck</Text>
       {
-        props.decks.map(deck => {
+        props.cards.map(card => {
           return (<View key ={key++}>
-            <TouchableOpacity onPress={() => {props.selectDeck(deck), props.navigation.navigate('DeckView')}}>
-              <Text style={styles.deckItem}>{deck}</Text>
+            <TouchableOpacity onPress={() => {props.navigation.navigate('DeckView')}}>
+              <Text style={styles.deckItem}>{card[0]}</Text>
             </TouchableOpacity>
           </View>)
         })}
@@ -21,7 +21,7 @@ const DeckListItems = (props) => {
   )
 }
 
-export default DeckListItems
+export default CardListItems
 
 const styles = StyleSheet.create({
   deckListTitle: {

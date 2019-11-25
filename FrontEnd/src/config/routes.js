@@ -4,13 +4,15 @@ import DeckListScreen from '../screens/DeckListScreen'
 import DeckView from '../screens/DeckView'
 import AddCardScreen from '../screens/AddCardScreen'
 import FreeStudyView from '../screens/FreeStudyScreen'
+import EditCardsScreen from '../screens/EditCardsScreen'
 
 const screens = 
   {
     DeckListScreen: {screen: DeckListScreen},
     DeckView: {screen: DeckView},
     AddCard: {screen: AddCardScreen},
-    FreeStudy: {screen: FreeStudyView}
+    FreeStudy: {screen: FreeStudyView},
+    EditCards: {screen: EditCardsScreen}
   }
 ;
 
