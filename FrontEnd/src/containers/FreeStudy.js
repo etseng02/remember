@@ -16,18 +16,43 @@ class FreeStudy extends Component{
     super(props);
  
     this.state = {
-       cardsQueue: '',
+       cardsQueue: [],
        currentCard: ''
     }
  }
 
  generateQueue = () => {
-  this.setState({...this.state, cardsQueue: 'hi'})
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  NewArrayQueueChecker = (number) => {
+    if (newArrayQueue.includes(number)){
+      tempNumber = getRandomInt(this.props.cards.length)
+      NewArrayQueueChecker(tempNumber)
+    } else
+    newArrayQueue.push(number)
+  }
+
+  let tempNumber = 0;
+  let newArrayQueue = []
+  let newArray = []
+  for (i = 0; i < this.props.cards.length; i++){
+    tempNumber = getRandomInt(this.props.cards.length)
+    NewArrayQueueChecker(tempNumber)
+  }
+
+  newArrayQueue.forEach((number) =>{
+    newArray.push(this.props.cards[number])
+  })
+  return newArray
  }
 
 
  componentDidMount = () => {
-  this.generateQueue()
+  let newOrder = this.generateQueue()
+  this.setState({...this.state, cardsQueue: newOrder})
   console.log(this.state)
  }
 
@@ -37,6 +62,7 @@ class FreeStudy extends Component{
       <View >
         <Text style={Styles.deckTitle}>{this.props.deck}</Text>
         <CardView/>
+        <Text>{this.state.cardsQueue}</Text>
       </View>
     )
   }
