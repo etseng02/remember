@@ -15,8 +15,7 @@ const models = (state = initialState.models , action) => {
         }
       }
     case 'DELETE_DECK':
-        console.log("dat the name",action.name)
-        console.log("dat the state",state[action.name])
+
         delete state[action.name]
         return {
           ...state, 
@@ -29,12 +28,14 @@ const models = (state = initialState.models , action) => {
         }
       }
     case 'DELETE_CARD':
+      //console.log("dat the card", action.card)
+      //console.log("DATS THE STATE:", state[action.deck].cards)
+      // console.log ("ACTION.CARD",action.card.card)
+      let newArray = state[action.deck].cards.filter(card => card[0] !== action.card[0] && card[1] !== action.card[1])
+      console.log(newArray)
       return {
-        ...state,
-        [action.deck]: {
-          cards: [...state[action.deck].cards, [action.card, action.answer]]
+        ...state, [action.deck]:{cards: newArray }
         }
-      }
     default:
       return state;
   }

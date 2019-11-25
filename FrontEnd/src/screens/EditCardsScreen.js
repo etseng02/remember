@@ -8,7 +8,6 @@ class EditCardsScreen extends Component{
   render(){
     return(
       <View style={Styles.container}>
-        <Logo/>
         <EditCards navigation={this.props.navigation}/>
       </View>
     )

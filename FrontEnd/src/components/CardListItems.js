@@ -1,21 +1,39 @@
 import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 const CardListItems = (props) => {
 
   let key = 0
+
+  const RightActions = (card) => {
+    return(
+      <TouchableOpacity
+      style={Styles.deleteCard}
+      onPress={() => props.deleteCard(card.card, props.deck)}>
+        <View >
+            <Text>Delete Item</Text>
+        </View>
+      </TouchableOpacity>
+    )
+  }
   
   return(
     <View>
-      <Text style={styles.deckListTitle}>{props.deck}</Text>
+      <Text style={Styles.deckListTitle}>{props.deck}</Text>
       {
         props.cards.map(card => {
-          return (<View key ={key++}>
+          return (<Swipeable
+            key ={key++}
+            renderRightActions={() => <RightActions card={card}/>}
+          >
+          <View style={Styles.cardItem}>
             <TouchableOpacity onPress={() => {props.navigation.navigate('DeckView')}}>
-              <Text style={styles.deckItem}>{card[0]} // {card[1]}</Text>
+              <Text >{key}: {card[0]} || {card[1]}</Text>
             </TouchableOpacity>
-          </View>)
+          </View>
+          </Swipeable>)
         })}
     </View>
   )
@@ -23,23 +41,29 @@ const CardListItems = (props) => {
 
 export default CardListItems
 
-const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
   deckListTitle: {
     fontSize: 24,
     justifyContent: 'center',
     textAlign: 'center',
     marginTop: 10
   },
-  deckItem: {
-    width: '80%',
+  cardItem: {
+    width: '100%',
     fontSize: 24,
     borderWidth: 1,
-    borderRadius: 10,
     padding: 10,
     justifyContent: 'center',
     textAlign: 'center',
     alignSelf: 'center',
-    margin: 5,
+    zIndex: 1,
+    backgroundColor: 'white',
 
-  }
+
+  },
+  deleteCard: {
+    backgroundColor: 'red',
+    zIndex: 0
+  },
+
 })
