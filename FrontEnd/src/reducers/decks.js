@@ -14,8 +14,13 @@ const models = (state = initialState.models , action) => {
           cards: [],
         }
       }
-    case 'DELETE DECK':
-      return delete state[action.deck]
+    case 'DELETE_DECK':
+        console.log("dat the name",action.name)
+        console.log("dat the state",state[action.name])
+        delete state[action.name]
+        return {
+          ...state, 
+        }
     case 'ADD_CARD':
       return {
         ...state,
@@ -39,8 +44,11 @@ const current = (state = initialState.current , action) => {
   switch(action.type){
       case 'SELECT_DECK':
         return action.name
+      case 'DELETE_DECK':
+          return null
       default: return state;
   }
+
 }
 
 export default combineReducers({ models, current })

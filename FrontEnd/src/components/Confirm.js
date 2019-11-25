@@ -8,7 +8,7 @@ const Confirm = (props) => {
   return(
     <View>
       <Text style={Styles.deckTitle}>{props.deckName}</Text>
-      <Button text={'Confirm'} onPress={()=>{}}/>
+      <Button text={'Confirm'} onPress={()=>{props.navigation.navigate('DeckListScreen'), props.deleteDeck(props.deck)}}/>
       <Button text={'Cancel'} onPress={() => props.navigation.goBack()} />
     </View>
   )

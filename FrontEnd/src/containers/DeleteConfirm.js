@@ -4,7 +4,6 @@ import Confirm from '../components/Confirm'
 const mapStateToProps = function(state) {
   return {
     deck: state.decks.current,
-    cards: state.decks.models[state.decks.current].cards,
   }
 }
 
