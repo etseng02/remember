@@ -6,6 +6,7 @@ import AddCardScreen from '../screens/AddCardScreen'
 import FreeStudyView from '../screens/FreeStudyScreen'
 import CardsListScreen from '../screens/CardsListScreen'
 import DeleteConfirmScreen from '../screens/DeleteConfirmScreen'
+import EditCardScreen from '../screens/EditCardScreen'
 
 const screens = 
   {
@@ -13,7 +14,8 @@ const screens =
     DeckView: {screen: DeckView},
     AddCard: {screen: AddCardScreen},
     FreeStudy: {screen: FreeStudyView},
-    CardsList: {screen: CardsListScreen}
+    CardsList: {screen: CardsListScreen},
+    EditCard: {screen: EditCardScreen}
   }
 ;
 

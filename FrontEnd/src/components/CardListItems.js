@@ -29,7 +29,7 @@ const CardListItems = (props) => {
             renderRightActions={() => <RightActions card={card}/>}
           >
           <View style={Styles.cardItem}>
-            <TouchableOpacity onPress={() => {props.navigation.navigate('DeckView')}}>
+            <TouchableOpacity onPress={() => {props.selectCard(card, props.deck), props.navigation.navigate('EditCard')}}>
               <Text >{key}: {card[0]} || {card[1]}</Text>
             </TouchableOpacity>
           </View>

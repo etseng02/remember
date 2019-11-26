@@ -3,6 +3,7 @@ import { combineReducers } from "redux";
 const initialState = {
   models: {},
   current: null,
+  card: null,
 }
 
 const models = (state = initialState.models , action) => {
@@ -15,7 +16,6 @@ const models = (state = initialState.models , action) => {
         }
       }
     case 'DELETE_DECK':
-
         delete state[action.name]
         return {
           ...state, 
@@ -28,14 +28,20 @@ const models = (state = initialState.models , action) => {
         }
       }
     case 'DELETE_CARD':
-      //console.log("dat the card", action.card)
-      //console.log("DATS THE STATE:", state[action.deck].cards)
-      // console.log ("ACTION.CARD",action.card.card)
       let newArray = state[action.deck].cards.filter(card => card[0] !== action.card[0] && card[1] !== action.card[1])
-      console.log(newArray)
       return {
         ...state, [action.deck]:{cards: newArray }
         }
+    case 'EDIT_CARD':
+      console.log("card", action.card)
+      console.log("answer", action.answer)
+      console.log("prev", action.prevCard)
+      console.log("deck", action.deck)
+      let index = state[action.deck].cards.indexOf(action.prevCard)
+      console.log(index)
+      state[action.deck].cards.splice(index, 1, [action.card, action.answer])
+      return {...state}
+        
     default:
       return state;
   }
@@ -49,7 +55,14 @@ const current = (state = initialState.current , action) => {
           return null
       default: return state;
   }
-
 }
 
-export default combineReducers({ models, current })
+const card = (state = initialState.current , action) => {
+  switch(action.type){
+    case 'SELECT_CARD':
+      return action.card
+    default: return state;
+  }
+}
+
+export default combineReducers({ models, current, card })
