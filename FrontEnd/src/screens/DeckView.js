@@ -20,6 +20,7 @@ export default DeckView;
 
 const Styles = EStyleSheet.create({
   container:{
-    backgroundColor: '$primaryBackground'
+    backgroundColor: '$primaryBackground',
+    flex: 1
   }
 })

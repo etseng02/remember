@@ -11,9 +11,9 @@ const Button = (props) => {
   )
 }
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   buttonText: {
-    color: 'white',
+    color: '$primaryNeutral',
     fontSize: 18,
   }
 

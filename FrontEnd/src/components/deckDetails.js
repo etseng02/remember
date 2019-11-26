@@ -1,13 +1,14 @@
 import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import {Button} from './Button'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 const deckDetails = (props) => {
 
   return(
     <View>
       <Text style={Styles.deckTitle}>{props.deckName}</Text>
-      <Text>Number of Cards: {props.deck.cards.length}</Text>
+      <Text style={Styles.details}>Number of Cards: {props.deck.cards.length}</Text>
       <Button text="Add Card" onPress={() => {props.navigation.navigate('AddCard')}}/>
       <Button text="Enhanced Study"/>
       <Button text="Free Study"onPress={() => {props.navigation.navigate('FreeStudy')}}/>
@@ -18,14 +19,16 @@ const deckDetails = (props) => {
 
 export default deckDetails
 
-const Styles = StyleSheet.create({
+const Styles = EStyleSheet.create({
   deckTitle:{
     fontSize: 28,
     alignSelf: 'center',
     justifyContent: 'center',
     textAlign: 'center',
     marginTop: 25,
+    color: "$primaryNeutral"
   },
-  container:{
+  details:{
+    color: "$primaryNeutral"
   }
 })
