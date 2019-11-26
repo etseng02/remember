@@ -28,5 +28,7 @@ const Styles = StyleSheet.create({
     marginTop: 25,
   },
   container:{
+    backgroundColor: '#43484c',
+    flex: 1
   }
 })

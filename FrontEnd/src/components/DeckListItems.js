@@ -72,6 +72,10 @@ const Styles = StyleSheet.create({
     backgroundColor: 'red',
     zIndex: 0
   },
+  container:{
+    backgroundColor: '#43484c',
+    flex:1,
+  }
 
 
 })
