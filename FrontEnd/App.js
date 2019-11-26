@@ -6,8 +6,15 @@ import MainNavigator from './src/config/routes'
 
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/es/integration/react";
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 export default function App() {
+
+  EStyleSheet.build({
+    $primaryBackground: '#43484c',
+    $primaryColor: '#ffc700',
+    $primaryNeutral: 'white'
+  })
  
   store.subscribe(()=>{
     console.log(store.getState())

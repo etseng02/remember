@@ -1,5 +1,6 @@
 import React from 'react';
-import {Text, StyleSheet } from 'react-native';
+import {Text } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 const Logo = () => {
   return (
@@ -9,7 +10,7 @@ const Logo = () => {
 
 export default Logo
 
-const Styles = StyleSheet.create({
+const Styles = EStyleSheet.create({
   appTitle:{
     fontSize: 28,
     alignItems: 'center',
@@ -17,5 +18,6 @@ const Styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     marginTop: 25,
+    color: '$primaryColor'
   }
 })

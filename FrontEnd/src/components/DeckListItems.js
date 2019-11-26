@@ -1,7 +1,8 @@
 import React from 'react'
-import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
+import {Text, TouchableOpacity, View } from 'react-native';
 import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 
 
@@ -15,7 +16,7 @@ const DeckListItems = (props) => {
       style={Styles.deleteDeck}
       onPress={() => {props.selectDeck(deck.name), props.navigation.navigate('DeleteConfirm')}}>
         <View >
-            <Text>Delete Item</Text>
+            <Text style={Styles.deleteText}>DELETE</Text>
         </View>
       </TouchableOpacity>
     )
@@ -34,7 +35,7 @@ const DeckListItems = (props) => {
             >
               <View style={Styles.ListItem}>
                 <TouchableOpacity onPress={() => {props.selectDeck(deck), props.navigation.navigate('DeckView')}}>
-                  <Text style={Styles.deckItem}>{deck}</Text>
+                  <Text style={Styles.deckText}>{deck}</Text>
                 </TouchableOpacity>
               </View>
           </Swipeable>)
@@ -45,37 +46,51 @@ const DeckListItems = (props) => {
 
 export default DeckListItems
 
-const Styles = StyleSheet.create({
+const Styles = EStyleSheet.create({
   deckListTitle: {
     fontSize: 24,
     justifyContent: 'center',
     textAlign: 'center',
-    marginTop: 10
+    marginTop: 10,
+    color: '$primaryColor'
   },
-  deckItem: {
-    width: '100%',
+  deckText: {
     fontSize: 24,
-    borderWidth: 1,
-    padding: 10,
-    justifyContent: 'center',
     textAlign: 'center',
-    alignSelf: 'center',
     zIndex: 1,
+    color:'$primaryNeutral'
 
   },
   ListItem: {
     zIndex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '$primaryBackground',
+    borderWidth: 1,
+    padding: 10,
+    borderColor: '$primaryColor',
+    borderRadius: 10,
+    width: '80%',
+    alignSelf: 'center',
+    marginRight: 0,
+    margin: 5
   },
   deleteDeck: {
-    color: 'white',
+    flexDirection: 'row',
     backgroundColor: 'red',
-    zIndex: 0
+    zIndex: 0,
+    borderRadius: 10,
+    marginLeft: 0,
+    marginRight: 36,
+    alignSelf: 'center',
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 5,
+    paddingRight: 5,
   },
-  container:{
-    backgroundColor: '#43484c',
-    flex:1,
+  deleteText: {
+    color: 'white',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
   }
-
 
 })
