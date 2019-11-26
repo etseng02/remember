@@ -1,9 +1,10 @@
 import React from 'react';
 import {Text, StyleSheet, TouchableOpacity } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 const Button = (props) => {
   return (
-    <TouchableOpacity style ={styles.buttonBody} onPress={props.onPress} >
+    <TouchableOpacity style ={props.style} onPress={props.onPress} >
     {/* {props.type === 'addcard' ? <Text>Hello</Text>:null}  */}
       <Text style={styles.buttonText}>{props.text}</Text>
     </TouchableOpacity>
@@ -11,14 +12,6 @@ const Button = (props) => {
 }
 
 const styles = StyleSheet.create({
-  buttonBody: {
-    backgroundColor: '#00aeef',
-    width: '30%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 10,
-    padding: 20,
-  },
   buttonText: {
     color: 'white',
     fontSize: 18,

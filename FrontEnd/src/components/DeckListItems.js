@@ -3,6 +3,7 @@ import {Text, TouchableOpacity, View } from 'react-native';
 import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import EStyleSheet from 'react-native-extended-stylesheet'
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -16,7 +17,7 @@ const DeckListItems = (props) => {
       style={Styles.deleteDeck}
       onPress={() => {props.selectDeck(deck.name), props.navigation.navigate('DeleteConfirm')}}>
         <View >
-            <Text style={Styles.deleteText}>DELETE</Text>
+            <Ionicons style={Styles.deleteText}name="ios-trash"/>
         </View>
       </TouchableOpacity>
     )
@@ -68,29 +69,28 @@ const Styles = EStyleSheet.create({
     padding: 10,
     borderColor: '$primaryColor',
     borderRadius: 10,
-    width: '80%',
+    width: '100%',
     alignSelf: 'center',
-    marginRight: 0,
-    margin: 5
+    margin: 5,
   },
   deleteDeck: {
     flexDirection: 'row',
-    backgroundColor: 'red',
+    backgroundColor: 'orangered',
     zIndex: 0,
     borderRadius: 10,
     marginLeft: 0,
-    marginRight: 36,
     alignSelf: 'center',
-    paddingTop: 15,
-    paddingBottom: 15,
-    paddingLeft: 5,
-    paddingRight: 5,
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 30,
+    paddingRight: 30,
   },
   deleteText: {
     color: 'white',
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+    fontSize: 32,
   }
 
 })

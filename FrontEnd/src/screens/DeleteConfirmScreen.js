@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import Logo from '../components/Logo'
 import DeleteConfirm from '../containers/DeleteConfirm'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 class DeleteConfirmScreen extends Component{
 
@@ -9,7 +10,7 @@ class DeleteConfirmScreen extends Component{
 
 
     return(
-      <View>
+      <View style={Styles.container}>
         <DeleteConfirm navigation={this.props.navigation}/>
       </View>
     )
@@ -18,13 +19,9 @@ class DeleteConfirmScreen extends Component{
 
 export default DeleteConfirmScreen;
 
-const Styles = StyleSheet.create({
+const Styles = EStyleSheet.create({
   container:{
-    padding: 10,
-    borderWidth: 1,
-    fontSize: 28,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    marginTop: 25,
-  },
+    backgroundColor: '#43484c',
+    flex: 1
+  }
 })
