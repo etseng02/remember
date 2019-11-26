@@ -11,7 +11,7 @@ const deckDetails = (props) => {
       <Button text="Add Card" onPress={() => {props.navigation.navigate('AddCard')}}/>
       <Button text="Enhanced Study"/>
       <Button text="Free Study"onPress={() => {props.navigation.navigate('FreeStudy')}}/>
-      <Button text="Edit Cards"onPress={() => {props.navigation.navigate('EditCards')}}/>
+      <Button text="Edit Cards"onPress={() => {props.navigation.navigate('CardsList')}}/>
     </View>
   )
 }
