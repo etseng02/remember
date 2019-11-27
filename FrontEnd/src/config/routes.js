@@ -7,6 +7,7 @@ import FreeStudyView from '../screens/FreeStudyScreen'
 import CardsListScreen from '../screens/CardsListScreen'
 import DeleteConfirmScreen from '../screens/DeleteConfirmScreen'
 import EditCardScreen from '../screens/EditCardScreen'
+import AddDeckScreen from '../screens/AddDeckScreen'
 
 const screens = 
   {
@@ -32,6 +33,7 @@ export const AppNavigator = createStackNavigator(
   {
     content: MainNavigator,
     DeleteConfirm: { screen: DeleteConfirmScreen },
+    AddDeck: {screen: AddDeckScreen}
   },
   {
     headerMode: 'none',

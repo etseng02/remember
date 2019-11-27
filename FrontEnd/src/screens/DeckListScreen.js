@@ -12,9 +12,8 @@ class DeckListScreen extends Component{
     return(
       <View style={Styles.container}>
         <Logo/>
-        <AddDeck/>
         <DeckList navigation={this.props.navigation}/>
-        <Button style={Styles.addButton}text={'+'}/>
+        <Button style={Styles.addButton}text={'+'} onPress={()=> this.props.navigation.navigate('AddDeck')}/>
       </View>
     )
   }
