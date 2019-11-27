@@ -3,6 +3,8 @@ import {View, Text, StyleSheet} from 'react-native'
 import AddDeck from '../containers/AddDeck'
 import DeckList from '../containers/DeckList'
 import Logo from '../components/Logo'
+import {Button} from '../components/Button'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 class DeckListScreen extends Component{
 
@@ -12,6 +14,7 @@ class DeckListScreen extends Component{
         <Logo/>
         <AddDeck/>
         <DeckList navigation={this.props.navigation}/>
+        <Button style={Styles.addButton}text={'+'}/>
       </View>
     )
   }
@@ -19,7 +22,7 @@ class DeckListScreen extends Component{
 
 export default DeckListScreen;
 
-const Styles = StyleSheet.create({
+const Styles = EStyleSheet.create({
   appTitle:{
     fontSize: 28,
     alignSelf: 'center',
@@ -30,5 +33,16 @@ const Styles = StyleSheet.create({
   container:{
     backgroundColor: '#43484c',
     flex: 1
+  },
+  addButton:{
+    backgroundColor: '$primaryColor',
+    height: 50,
+    width: 50,
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    bottom:20,
+    right:20,
   }
 })

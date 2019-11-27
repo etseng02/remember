@@ -9,7 +9,6 @@ class DeckView extends Component{
   render(){
     return(
       <View style={Styles.container}>
-        <Logo/>
         <Deck navigation={this.props.navigation}/>
       </View>
     )
