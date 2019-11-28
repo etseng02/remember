@@ -13,6 +13,7 @@ export default function App() {
   EStyleSheet.build({
     $primaryBackground: '#43484c',
     $primaryColor: '#ffc700',
+    $primaryColorComp: '#2A17B1',
     $primaryNeutral: 'white'
   })
  

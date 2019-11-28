@@ -13,7 +13,6 @@ const screens =
   {
     DeckListScreen: {screen: DeckListScreen},
     DeckView: {screen: DeckView},
-    AddCard: {screen: AddCardScreen},
     FreeStudy: {screen: FreeStudyView},
     CardsList: {screen: CardsListScreen},
     EditCard: {screen: EditCardScreen}
@@ -33,7 +32,8 @@ export const AppNavigator = createStackNavigator(
   {
     content: MainNavigator,
     DeleteConfirm: { screen: DeleteConfirmScreen },
-    AddDeck: {screen: AddDeckScreen}
+    AddDeck: {screen: AddDeckScreen},
+    AddCard: {screen: AddCardScreen},
   },
   {
     headerMode: 'none',

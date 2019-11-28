@@ -8,7 +8,6 @@ class AddCardScreen extends Component{
   render(){
     return(
       <View style={Styles.container}>
-        <Logo/>
         <AddCards navigation={this.props.navigation}/>
       </View>
     )
@@ -26,5 +25,7 @@ const Styles = StyleSheet.create({
     marginTop: 25,
   },
   container:{
-  }
+    backgroundColor: '#43484c',
+    flex: 1
+  },
 })

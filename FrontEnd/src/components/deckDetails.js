@@ -9,10 +9,13 @@ const deckDetails = (props) => {
     <View>
       <Text style={Styles.deckTitle}>{props.deckName}</Text>
       <Text style={Styles.details}>Number of Cards: {props.deck.cards.length}</Text>
-      <Button text="Add Card" onPress={() => {props.navigation.navigate('AddCard')}}/>
-      <Button text="Enhanced Study"/>
-      <Button text="Free Study"onPress={() => {props.navigation.navigate('FreeStudy')}}/>
-      <Button text="Edit Cards"onPress={() => {props.navigation.navigate('CardsList')}}/>
+      <View style={Styles.buttonLayout}>
+        <Button style={Styles.enhancedStudy}text="Enhanced Study"/>
+          <View style={Styles.buttonLayoutColumn}>
+            <Button style={Styles.freeStudy}text="Free Study"onPress={() => {props.navigation.navigate('FreeStudy')}}/>
+            <Button style={Styles.editCards}text="Edit Cards"onPress={() => {props.navigation.navigate('CardsList')}}/>
+          </View>
+      </View>
     </View>
   )
 }
@@ -26,9 +29,44 @@ const Styles = EStyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     marginTop: 25,
-    color: "$primaryNeutral"
+    color: "$primaryColor"
   },
   details:{
     color: "$primaryNeutral"
+  },
+  buttonLayout:{
+    flexDirection:'row',
+    alignSelf: 'center',
+    justifyContent: 'center',
+  },
+  buttonLayoutColumn:{
+    flexDirection:'column'
+  },
+  enhancedStudy: {
+    backgroundColor: '$primaryColorComp',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 150,
+    width: 150,
+    borderRadius: 10,
+    margin: 5
+  },
+  freeStudy: {
+    backgroundColor: '$primaryColor',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 70,
+    width: 70,
+    borderRadius: 10,
+    margin: 5
+  },
+  editCards: {
+    backgroundColor: '$primaryColor',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 70,
+    width: 70,
+    borderRadius: 10,
+    margin: 5
   }
 })
