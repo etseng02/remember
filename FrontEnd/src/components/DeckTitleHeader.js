@@ -2,15 +2,15 @@ import React from 'react';
 import {Text, View  } from 'react-native';
 import EStyleSheet from 'react-native-extended-stylesheet'
 
-const Logo = () => {
+const DeckTitleHeader = (props) => {
   return (
     <View style={Styles.header}>
-      <Text style={Styles.appTitle}>Remember Harder</Text>
+      <Text style={Styles.appTitle}>{props.text}</Text>
     </View>
   )
 }
 
-export default Logo
+export default DeckTitleHeader
 
 const Styles = EStyleSheet.create({
   appTitle:{
@@ -21,12 +21,12 @@ const Styles = EStyleSheet.create({
     textAlign: 'center',
     paddingTop: 25,
     paddingBottom: 20,
-    color: '$primaryColorComp',
+    color: '$primaryNeutral',
     backgroundColor: '$primaryBackground',
     width: '100%',
   },
   header:{
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
     borderColor: '$primaryNeutral'
   }
 })

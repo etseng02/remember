@@ -21,7 +21,7 @@ export default DeckView;
 
 const Styles = EStyleSheet.create({
   container:{
-    backgroundColor: '$primaryBackground',
+    backgroundColor: '$primaryBackgroundDark',
     flex: 1
   },
   addButton:{

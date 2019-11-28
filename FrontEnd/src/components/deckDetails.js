@@ -1,13 +1,14 @@
 import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import {Button} from './Button'
+import DeckTitleHeader from './DeckTitleHeader'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
 const deckDetails = (props) => {
 
   return(
     <View>
-      <Text style={Styles.deckTitle}>{props.deckName}</Text>
+      <DeckTitleHeader style={Styles.deckTitle} text={props.deckName} />
       <Text style={Styles.details}>Number of Cards: {props.deck.cards.length}</Text>
       <View style={Styles.buttonLayout}>
         <Button style={Styles.enhancedStudy}text="Enhanced Study"/>
