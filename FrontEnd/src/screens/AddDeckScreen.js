@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text} from 'react-native'
 import Logo from '../components/Logo'
 import AddCards from '../containers/AddCards'
 import EStyleSheet from 'react-native-extended-stylesheet'
@@ -18,7 +18,7 @@ class AddDeckScreen extends Component{
 
 export default AddDeckScreen;
 
-const Styles = StyleSheet.create({
+const Styles = EStyleSheet.create({
   appTitle:{
     fontSize: 28,
     alignSelf: 'center',
@@ -27,7 +27,7 @@ const Styles = StyleSheet.create({
     marginTop: 25,
   },
   container:{
-    backgroundColor: '#43484c',
+    backgroundColor: '$primaryBackgroundDark',
     flex: 1
   },
 })

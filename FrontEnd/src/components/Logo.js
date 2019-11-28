@@ -17,7 +17,10 @@ const Styles = EStyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    marginTop: 25,
-    color: '$primaryColor'
+    paddingTop: 25,
+    paddingBottom: 20,
+    color: '$primaryColorComp',
+    backgroundColor: '$primaryBackground',
+    width: '100%',
   }
 })

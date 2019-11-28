@@ -65,9 +65,9 @@ const Styles = EStyleSheet.create({
   ListItem: {
     zIndex: 1,
     backgroundColor: '$primaryBackground',
-    borderWidth: 1,
+    borderWidth: 2,
     padding: 10,
-    borderColor: '$primaryColor',
+    borderColor: '$primaryNeutral',
     borderRadius: 10,
     width: '100%',
     alignSelf: 'center',

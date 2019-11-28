@@ -29,7 +29,7 @@ const Styles = EStyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     marginTop: 25,
-    color: "$primaryColor"
+    color: "$primaryNeutral"
   },
   details:{
     color: "$primaryNeutral"

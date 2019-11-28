@@ -72,19 +72,20 @@ const Styles = EStyleSheet.create({
     padding: 5,
   },
   container:{
-    borderWidth: 1,
+    borderWidth: 3,
     marginTop: 200,
     width: '80%',
     alignSelf: 'center',
     justifyContent: 'center',
     borderRadius: 10,
     padding: 10,
-    borderColor: '$primaryColor'
+    borderColor: '$primaryColor',
+    backgroundColor: '$primaryBackground'
   },
   title:{
     fontSize: 28,
     textAlign: 'center',
-    color: '$primaryColor',
+    color: '$primaryNeutral',
 
   },
 });
