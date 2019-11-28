@@ -10,12 +10,13 @@ A flashcard application used to help commit knowledge into long term memory. Use
 * Add Deck Feature
 * Add Card Feature
 * Redux Persist
+* Delete card
+* Delete deck
+* Free Study Mode
 
 ### Features in Progress:
 * Study mode (Testing user on cards and calculating next study interval)
 * Syncing to server with authentication
-* Delete card
-* Delete deck
 * Styling Application
 
 ## Getting Started
