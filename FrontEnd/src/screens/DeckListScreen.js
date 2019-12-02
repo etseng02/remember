@@ -22,13 +22,6 @@ class DeckListScreen extends Component{
 export default DeckListScreen;
 
 const Styles = EStyleSheet.create({
-  appTitle:{
-    fontSize: 28,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    marginTop: 25,
-  },
   container:{
     backgroundColor: '$primaryBackgroundDark',
     flex: 1

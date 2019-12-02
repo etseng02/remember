@@ -3,6 +3,8 @@ import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native'
 import {connect} from 'react-redux'
 import CardView from '../components/CardView'
 import {Button} from '../components/Button'
+import DeckTitleHeader from '../components/DeckTitleHeader'
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 const mapStateToProps = function(state) {
   return {
@@ -19,7 +21,8 @@ class FreeStudy extends Component{
     this.state = {
        cardsQueue: [],
        currentCard: [],
-       phase: 'question'
+       phase: 'question',
+       answer: ''
     }
  }
 
@@ -81,9 +84,15 @@ class FreeStudy extends Component{
   render(){
     return(
       <View >
-        <Text style={Styles.deckTitle}>{this.props.deck}</Text>
+        <DeckTitleHeader text ={this.props.deck + " Free Study"}/>
         <CardView card={this.state.currentCard[0]}/>
-        {this.state.phase === 'question'? <Button text={'Submit Answer'} onPress={()=> this.setState({...this.state, phase:'answer'}) }/>: null }
+        {this.state.phase === 'question'? <TextInput
+          onChangeText={(text)=> this.setState({answer:text})}
+          placeholder="Enter your Answer Here!"
+          style={Styles.input}
+          value={this.state.answer}
+        />: null}
+        {this.state.phase === 'question'? <Button style={Styles.buttonConfirm}text={'Submit Answer'} onPress={()=> this.setState({...this.state, phase:'answer'}) }/>: null }
         {this.state.phase === 'answer'? <Text>{this.state.currentCard[1]}</Text>: null }
         {this.state.phase === 'answer'? <Button text={'Next Question'} onPress={()=> this.nextQuestion() }/>: null }
       </View>
@@ -93,7 +102,7 @@ class FreeStudy extends Component{
 
 export default connect(mapStateToProps)(FreeStudy);
 
-const Styles = StyleSheet.create({
+const Styles = EStyleSheet.create({
   input:{
     backgroundColor: '#eaeaea',
     borderWidth: 1,
@@ -101,14 +110,22 @@ const Styles = StyleSheet.create({
     padding: 10,
     height: 50,
     width: '100%',
-    marginTop: 30,
-    marginRight: 0,
-  },
-  deckTitle:{
-    fontSize: 28,
+    margin:10,
+    borderRadius:10,
     alignSelf: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    marginTop: 25,
+    width: '20 rem'
   },
+  buttonConfirm: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    borderWidth: 1,
+    backgroundColor: '$primaryColor',
+    borderColor: '$primaryColor',
+    borderRadius: 10,
+    padding: 10,
+    margin: 10,
+  }
 });

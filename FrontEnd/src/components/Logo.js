@@ -14,19 +14,18 @@ export default Logo
 
 const Styles = EStyleSheet.create({
   appTitle:{
-    fontSize: 28,
-    alignItems: 'center',
     alignSelf: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'center',
     textAlign: 'center',
-    paddingTop: 25,
-    paddingBottom: 20,
+    fontSize: '2 rem',
     color: '$primaryColorComp',
-    backgroundColor: '$primaryBackground',
+    backgroundColor: '$primaryBackgroundDark',
     width: '100%',
   },
   header:{
-    borderBottomWidth: 2,
-    borderColor: '$primaryNeutral'
+    borderBottomWidth: 1,
+    borderColor: '$primaryNeutral',
+    paddingTop: "2.5 rem"
   }
 })
