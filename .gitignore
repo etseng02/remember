@@ -16,3 +16,5 @@ web-report/
 package-lock.json
 packager-info.json
 .expo/packager-info.json
+FrontEnd/.expo/packager-info.json
+FrontEnd/.expo/*
