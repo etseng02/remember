@@ -22,7 +22,8 @@ class FreeStudy extends Component{
        cardsQueue: [],
        currentCard: [],
        phase: 'question',
-       answer: ''
+       answer: '',
+       cycles: 0,
     }
  }
 
@@ -65,17 +66,17 @@ class FreeStudy extends Component{
  }
 
  nextQuestion = () => {
-
-  if (this.state.cardsQueue.length === 0) {
-    let newOrder = this.generateQueue()
-    let firstCard = newOrder[0]
-    newOrder.shift()
-    this.setState({...this.state, cardsQueue: newOrder, currentCard: firstCard})
-  } else {
     let newCard = this.state.cardsQueue[0]
     let newArray = this.state.cardsQueue
     newArray.shift()
-    this.setState({...this.state, phase:'question', currentCard: newCard, cardsQueue: newArray })
+    this.setState({...this.state, phase:'question', currentCard: newCard, cardsQueue: newArray, answer: '' })
+ }
+
+ submitAnswer = () => {
+  if (this.state.cardsQueue.length === 0) {
+    let newOrder = this.generateQueue()
+    // newOrder.shift()
+    this.setState({...this.state, cardsQueue: newOrder, phase:'answer', cycles: this.state.cycles+1 })
   }
 
  }
@@ -85,16 +86,39 @@ class FreeStudy extends Component{
     return(
       <View >
         <DeckTitleHeader text ={this.props.deck + " Free Study"}/>
+        <Text style={Styles.answerText}>All Cards Reviewed {this.state.cycles} Times</Text>
+
         <CardView card={this.state.currentCard[0]}/>
-        {this.state.phase === 'question'? <TextInput
-          onChangeText={(text)=> this.setState({answer:text})}
-          placeholder="Enter your Answer Here!"
-          style={Styles.input}
-          value={this.state.answer}
-        />: null}
-        {this.state.phase === 'question'? <Button style={Styles.buttonConfirm}text={'Submit Answer'} onPress={()=> this.setState({...this.state, phase:'answer'}) }/>: null }
-        {this.state.phase === 'answer'? <Text>{this.state.currentCard[1]}</Text>: null }
-        {this.state.phase === 'answer'? <Button text={'Next Question'} onPress={()=> this.nextQuestion() }/>: null }
+
+        {this.state.phase === 'question'? 
+          <TextInput
+            onChangeText={(text)=> this.setState({answer:text})}
+            placeholder="Enter your Answer Here!"
+            style={Styles.input}
+            value={this.state.answer}
+          />: null
+        }
+
+        {this.state.phase === 'question'?
+          <Button
+            style={Styles.buttonConfirm}
+            text={'Submit Answer'}
+            onPress={()=> {this.setState({...this.state, phase:'answer'}), this.submitAnswer() }
+          }/>: null 
+        }
+
+        {this.state.phase === 'answer'? 
+          <Text style={Styles.answerText}>{this.state.currentCard[1]}</Text>:null
+        }
+        
+        {this.state.phase === 'answer'?
+          <Button 
+            style ={Styles.buttonSubmit}
+            text={'Next Question'}
+            onPress={()=> this.nextQuestion() }
+          />: null
+        }
+
       </View>
     )
   }
@@ -127,5 +151,23 @@ const Styles = EStyleSheet.create({
     borderRadius: 10,
     padding: 10,
     margin: 10,
+  },
+  buttonSubmit: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    borderWidth: 1,
+    backgroundColor: '$primaryColor',
+    borderColor: '$primaryColor',
+    borderRadius: 10,
+    padding: 10,
+    margin: 10,
+  },
+  answerText:{
+    alignSelf: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    color: '$primaryNeutral'
   }
+
 });
