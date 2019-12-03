@@ -18,3 +18,4 @@ packager-info.json
 .expo/packager-info.json
 FrontEnd/.expo/packager-info.json
 FrontEnd/.expo/*
+FrontEnd/node_modules/**/*
