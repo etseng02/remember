@@ -2,6 +2,7 @@ import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
+import DeckTitleHeader from './DeckTitleHeader'
 
 const CardListItems = (props) => {
 
@@ -21,7 +22,7 @@ const CardListItems = (props) => {
   
   return(
     <View>
-      <Text style={Styles.deckListTitle}>{props.deck}</Text>
+      <DeckTitleHeader text={props.deck}/>
       {
         props.cards.map(card => {
           return (<Swipeable
@@ -29,7 +30,7 @@ const CardListItems = (props) => {
             renderRightActions={() => <RightActions card={card}/>}
           >
           <View style={Styles.cardItem}>
-            <TouchableOpacity onPress={() => {props.selectCard(card, props.deck), props.navigation.navigate('EditCard')}}>
+            <TouchableOpacity key={key} onPress={() => {console.log("dat the key baby", card),props.selectCard(card, props.deck), props.navigation.navigate('EditCard')}}>
               <Text >{key}: {card[0]} || {card[1]}</Text>
             </TouchableOpacity>
           </View>
