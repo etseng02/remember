@@ -2,7 +2,8 @@ import React from 'react'
 import {Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
-import DeckTitleHeader from './DeckTitleHeader'
+import { Ionicons } from '@expo/vector-icons';
+import EStyleSheet from 'react-native-extended-stylesheet'
 
 const CardListItem = (props) => {
 
@@ -13,8 +14,8 @@ const CardListItem = (props) => {
       <TouchableOpacity
       style={Styles.deleteCard}
       onPress={() => props.deleteCard(card.card, props.deck)}>
-        <View >
-            <Text>Delete Item</Text>
+        <View>
+            <Ionicons style={Styles.deleteText}name="ios-trash"/>
         </View>
       </TouchableOpacity>
     )
@@ -27,7 +28,7 @@ const CardListItem = (props) => {
       >
       <View style={Styles.cardItem}>
         <TouchableOpacity onPress={() => {props.selectCard(props.id, props.deck), props.navigation.navigate('EditCard')}}>
-          <Text >{props.id+1}: {props.card[0]} || {props.card[1]}</Text>
+          <Text style={Styles.cardText}>{props.id+1}: {props.card[0]} || {props.card[1]}</Text>
         </TouchableOpacity>
       </View>
       </Swipeable>
@@ -37,29 +38,41 @@ const CardListItem = (props) => {
 
 export default CardListItem
 
-const Styles = StyleSheet.create({
-  deckListTitle: {
-    fontSize: 24,
-    justifyContent: 'center',
-    textAlign: 'center',
-    marginTop: 10
-  },
+const Styles = EStyleSheet.create({
   cardItem: {
     width: '100%',
     fontSize: 24,
-    borderWidth: 1,
+    // borderWidth: 1,
     padding: 10,
     justifyContent: 'center',
     textAlign: 'center',
     alignSelf: 'center',
     zIndex: 1,
-    backgroundColor: 'white',
-
-
+    backgroundColor: '$primaryBackground',
+    borderTopWidth: 1
+  },
+  cardText:{
+    color: '$primaryNeutral',
+    fontSize: '1 rem'
   },
   deleteCard: {
-    backgroundColor: 'red',
-    zIndex: 0
+    flexDirection: 'row',
+    backgroundColor: 'orangered',
+    zIndex: 0,
+    // borderRadius: 10,
+    marginLeft: 0,
+    alignSelf: 'center',
+    // paddingTop: 8,
+    // paddingBottom: 8,
+    paddingLeft: 30,
+    paddingRight: 30,
   },
+  deleteText: {
+    color: 'white',
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 32,
+  }
 
 })

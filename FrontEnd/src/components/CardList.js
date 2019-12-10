@@ -21,6 +21,7 @@ const CardList = (props) => {
               card ={card}
               selectCard={props.selectCard}
               navigation={props.navigation}
+              deleteCard={props.deleteCard}
             />
           )
         })}
