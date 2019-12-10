@@ -4,9 +4,9 @@ import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import DeckTitleHeader from './DeckTitleHeader'
 
-const CardListItems = (props) => {
+const CardListItem = (props) => {
 
-  let key = 0
+
 
   const RightActions = (card) => {
     return(
@@ -22,25 +22,20 @@ const CardListItems = (props) => {
   
   return(
     <View>
-      <DeckTitleHeader text={props.deck}/>
-      {
-        props.cards.map(card => {
-          return (<Swipeable
-            key ={key++}
-            renderRightActions={() => <RightActions card={card}/>}
-          >
-          <View style={Styles.cardItem}>
-            <TouchableOpacity key={key} onPress={() => {console.log("dat the key baby", card),props.selectCard(card, props.deck), props.navigation.navigate('EditCard')}}>
-              <Text >{key}: {card[0]} || {card[1]}</Text>
-            </TouchableOpacity>
-          </View>
-          </Swipeable>)
-        })}
+      <Swipeable
+        renderRightActions={() => <RightActions card={props.card}/>}
+      >
+      <View style={Styles.cardItem}>
+        <TouchableOpacity onPress={() => {props.selectCard(props.id, props.deck), props.navigation.navigate('EditCard')}}>
+          <Text >{props.id+1}: {props.card[0]} || {props.card[1]}</Text>
+        </TouchableOpacity>
+      </View>
+      </Swipeable>
     </View>
   )
 }
 
-export default CardListItems
+export default CardListItem
 
 const Styles = StyleSheet.create({
   deckListTitle: {

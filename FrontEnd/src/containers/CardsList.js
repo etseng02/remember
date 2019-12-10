@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import CardListItems from '../components/CardListItems'
+import CardList from '../components/CardList'
 
 const mapStateToProps = function(state) {
   return {
@@ -16,4 +16,4 @@ mapDispatchToProps = dispatch => ({
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardListItems)
+export default connect(mapStateToProps, mapDispatchToProps)(CardList)
