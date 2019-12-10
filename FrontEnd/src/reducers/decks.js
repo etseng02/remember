@@ -35,13 +35,10 @@ const models = (state = initialState.models , action) => {
     case 'EDIT_CARD':
       console.log("card", action.card)
       console.log("answer", action.answer)
-      console.log("prev", action.prevCard)
+      console.log("prev card index", action.prevCard)
       console.log("deck", action.deck)
-      let index = state[action.deck].cards.indexOf(action.prevCard)
-      console.log(index)
-      state[action.deck].cards.splice(index, 1, [action.card, action.answer])
-      return {...state}
-        
+      state[action.deck].cards.splice(action.prevCard, 1, [action.card, action.answer])
+      
     default:
       return state;
   }
