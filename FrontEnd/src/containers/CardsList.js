@@ -10,7 +10,7 @@ const mapStateToProps = function(state) {
 
 
 mapDispatchToProps = dispatch => ({
-  deleteCard: (card, deck) => dispatch({type: 'DELETE_CARD', card, deck}),
+  deleteCard: (cardPosition, deck) => dispatch({type: 'DELETE_CARD', cardPosition, deck}),
   selectCard: (card, deck) => dispatch({type: 'SELECT_CARD', card, deck})
 })
 

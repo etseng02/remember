@@ -28,15 +28,13 @@ const models = (state = initialState.models , action) => {
         }
       }
     case 'DELETE_CARD':
-      let newArray = state[action.deck].cards.filter(card => card[0] !== action.card[0] && card[1] !== action.card[1])
-      return {
-        ...state, [action.deck]:{cards: newArray }
-        }
+      console.log("Delete card: ",action.cardPosition, action.deck)
+      state[action.deck].cards.splice(action.cardPosition, 1,)
     case 'EDIT_CARD':
-      console.log("card", action.card)
-      console.log("answer", action.answer)
-      console.log("prev card index", action.prevCard)
-      console.log("deck", action.deck)
+      // console.log("card", action.card)
+      // console.log("answer", action.answer)
+      // console.log("prev card index", action.prevCard)
+      // console.log("deck", action.deck)
       state[action.deck].cards.splice(action.prevCard, 1, [action.card, action.answer])
       
     default:

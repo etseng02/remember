@@ -13,7 +13,7 @@ const CardListItem = (props) => {
     return(
       <TouchableOpacity
       style={Styles.deleteCard}
-      onPress={() => props.deleteCard(card.card, props.deck)}>
+      onPress={() => props.deleteCard(props.id, props.deck)}>
         <View>
             <Ionicons style={Styles.deleteText}name="ios-trash"/>
         </View>
@@ -24,7 +24,7 @@ const CardListItem = (props) => {
   return(
     <View>
       <Swipeable
-        renderRightActions={() => <RightActions card={props.card}/>}
+        renderRightActions={() => <RightActions />}
       >
       <View style={Styles.cardItem}>
         <TouchableOpacity onPress={() => {props.selectCard(props.id, props.deck), props.navigation.navigate('EditCard')}}>
