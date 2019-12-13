@@ -7,16 +7,33 @@ import EStyleSheet from 'react-native-extended-stylesheet'
 const deckDetails = (props) => {
 
   return(
-    <View>
+    <View >
       <DeckTitleHeader style={Styles.deckTitle} text={props.deckName} />
-      <Text style={Styles.details}>Number of Cards: {props.deck.cards.length}</Text>
-      <View style={Styles.buttonLayout}>
-        <Button style={Styles.enhancedStudy}text="Enhanced Study"/>
-          <View style={Styles.buttonLayoutColumn}>
-            <Button style={Styles.freeStudy}text="Free Study"onPress={() => {props.navigation.navigate('FreeStudy')}}/>
-            <Button style={Styles.editCards}text="Edit Cards"onPress={() => {props.navigation.navigate('CardsList')}}/>
-          </View>
-      </View>
+
+      {props.deck.cards.length === 0 ?
+        <View style={Styles.noCardsContainer}>
+          <Text style={Styles.noCardsText}>There are no cards in this deck!</Text>
+          <Button
+            text={'Add Cards'}
+            style={Styles.buttonConfirm}
+            onPress={()=> props.navigation.navigate('AddCard')}
+          />
+        </View>
+      :null}
+      
+
+      
+      {props.deck.cards.length > 0 ?
+        <View style={Styles.buttonLayout}>
+          <Button style={Styles.enhancedStudy}text="Enhanced Study"/>
+            <View style={Styles.buttonLayoutColumn}>
+              <Button style={Styles.freeStudy}text="Free Study"onPress={() => {props.navigation.navigate('FreeStudy')}}/>
+              <Button style={Styles.editCards}text="Edit Cards"onPress={() => {props.navigation.navigate('CardsList')}}/>
+            </View>
+        </View> 
+      :null}
+
+
     </View>
   )
 }
@@ -69,5 +86,35 @@ const Styles = EStyleSheet.create({
     width: 70,
     borderRadius: 10,
     margin: 5
+  },
+  buttonConfirm: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    borderWidth: 1,
+    backgroundColor: '$primaryColor',
+    borderColor: '$primaryColor',
+    borderRadius: 10,
+    padding: 10,
+    margin: 10,
+  },
+  noCardsText:{
+    fontSize: '1.5rem',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    color: "$primaryNeutral",
+    marginBottom: '1rem'
+  },
+  noCardsContainer:{
+    borderWidth: 3,
+    marginTop: 50,
+    width: '80%',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    padding: 30,
+    borderColor: '$primaryColor',
+    backgroundColor: '$primaryBackground'
   }
 })
