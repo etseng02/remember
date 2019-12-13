@@ -28,8 +28,8 @@ const models = (state = initialState.models , action) => {
         }
       }
     case 'DELETE_CARD':
-      console.log("Delete card: ",action.cardPosition, action.deck)
-      state[action.deck].cards.splice(action.cardPosition, 1,)
+      state[action.deck].cards.splice(action.cardPosition, 1)
+      return{...state}
     case 'EDIT_CARD':
       // console.log("card", action.card)
       // console.log("answer", action.answer)
