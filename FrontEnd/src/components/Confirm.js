@@ -26,12 +26,13 @@ const Styles = EStyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10,
     padding: 10,
-    borderColor: '$primaryColor'
+    borderColor: '$primaryColor',
+    backgroundColor:'$primaryBackground'
   },
   title:{
     fontSize: 28,
     textAlign: 'center',
-    color: '$primaryColor',
+    color: '$primaryNeutral',
 
   },
   buttonConfirm: {

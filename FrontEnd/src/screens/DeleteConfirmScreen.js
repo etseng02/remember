@@ -21,7 +21,7 @@ export default DeleteConfirmScreen;
 
 const Styles = EStyleSheet.create({
   container:{
-    backgroundColor: '#43484c',
+    backgroundColor: '$primaryBackgroundDark',
     flex: 1
-  }
+  },
 })
