@@ -15,7 +15,7 @@ A flashcard application used to help commit knowledge into long term memory. Use
 * Free Study Mode
 
 ### Features in Progress:
-* Study mode (Testing user on cards and calculating next study interval)
+* Enhanced Study mode (Testing user on cards and calculating next study interval)
 * Syncing to server with authentication
 
 ## Getting Started
@@ -33,16 +33,16 @@ Latest Version of xcode for iOS Simulator
 
 Main deck list screen. all decks will show here. Japanese is the only deck on that screen.
 
-!["Main Deck Screen"](https://github.com/etseng02/remember/blob/master/Docs/1.png)
+!["Main Deck Screen"](https://github.com/etseng02/remember/blob/master/Docs/1.PNG)
 
 Using a swipe festure, a delete button from the side to delete the deck.
-!["Main page"](https://github.com/etseng02/remember/blob/master/Docs/2.png)
+!["Delete Deck"](https://github.com/etseng02/remember/blob/master/Docs/2.PNG)
 
 Deck view options, enhanced study, free study, edit cards and add new card can be accessed from this menu.
-!["Main page"](https://github.com/etseng02/remember/blob/master/Docs/3.png)
+!["Deck View"](https://github.com/etseng02/remember/blob/master/Docs/3.PNG)
 
 Edit cards feature shows a the list of cards to edit or delete.
-!["Main page"](https://github.com/etseng02/remember/blob/master/Docs/4.png)
+!["Edit Cards"](https://github.com/etseng02/remember/blob/master/Docs/4.PNG)
 
 Free study mode creates an infinite loop of random cards from the selected deck.
-!["Main page"](https://github.com/etseng02/remember/blob/master/Docs/5.png)
+!["Free Study"](https://github.com/etseng02/remember/blob/master/Docs/5.PNG)
