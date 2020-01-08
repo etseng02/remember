@@ -25,7 +25,7 @@ const deckDetails = (props) => {
       
       {props.deck.cards.length > 0 ?
         <View style={Styles.buttonLayout}>
-          <Button style={Styles.enhancedStudy}text="Enhanced Study"/>
+          <Button style={Styles.enhancedStudy}text="Enhanced Study"onPress={() => {props.navigation.navigate('EnhancedStudy')}}/>
             <View style={Styles.buttonLayoutColumn}>
               <Button style={Styles.freeStudy}text="Free Study"onPress={() => {props.navigation.navigate('FreeStudy')}}/>
               <Button style={Styles.editCards}text="Edit Cards"onPress={() => {props.navigation.navigate('CardsList')}}/>

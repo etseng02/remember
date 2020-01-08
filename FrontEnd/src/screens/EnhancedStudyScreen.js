@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 import {View, Text} from 'react-native'
-import Logo from '../components/Logo'
 import FreeStudy from '../containers/FreeStudy'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
-class FreeStudyView extends Component{
+class EnchanedStudyScreen extends Component{
 
   render(){
     return(
@@ -15,7 +14,7 @@ class FreeStudyView extends Component{
   }
 }
 
-export default FreeStudyView;
+export default EnchanedStudyScreen;
 
 const Styles = EStyleSheet.create({
   container:{
